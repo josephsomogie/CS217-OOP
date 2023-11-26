@@ -41,6 +41,50 @@ void Square::Scale(float scaleFactor) {
 void Square::Display() const {
 	ShowArea();
 }
+/*Rectangle*/
+void Rectangle::setL(float L) {
+	length = L;
+}
+void Rectangle::setW(float W) {
+	width = W;
+}
+float Rectangle::getL() {
+	return length;
+}
+float Rectangle::getW() {
+	return width;
+}
+float Rectangle::Area() const {
+	return length * width;
+}
+string Rectangle::GetName2D() const {
+	return "Rectangle";
+}
+void Rectangle::Scale(float scaleFactor) {
+	length *= scaleFactor;
+	width *= scaleFactor;
+}
+void Rectangle::Display() const{
+	ShowArea();
+}
+/*Triangle*/
+
+/*Circle*/
+void Circle::setR(float r) {
+	radius = r;
+}
+float Circle::getR() {
+	return radius;
+}
+float Circle::Area() const {
+	return (3.14159265359 * (pow(radius, 2)));
+}
+void Circle::Scale(float scaleFactor) {
+	radius *= scaleFactor;
+}
+void Circle::Display() const {
+	ShowArea();
+}
 //Shape3d
 void Shape3D::ShowVolume() const {
 	cout << "Volume is " << Volume() << endl;

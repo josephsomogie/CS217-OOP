@@ -32,13 +32,33 @@ public:
 
 };
 class Rectangle : public Shape2D {
+private:
+	float length, width;
+public:
+	void setL(float L);
+	void setW(float W);
+	float getL();
+	float getW();
+	float Area() const override;
+	string GetName2D() const override;
+	void Scale(float scaleFactor) override;
+	void Display() const override;
 
+	
 };
 class Triangle : public Shape2D {
 
 };
 class Circle : public Shape2D {
-
+private:
+	float radius;
+public:
+	void setR(float r);
+	float getR();
+	float Area() const override;
+	string GetName2D() const override;
+	void Scale(float scaleFactor) override;
+	void Display() const override;
 };
 class Ellipse : public Shape2D {
 
