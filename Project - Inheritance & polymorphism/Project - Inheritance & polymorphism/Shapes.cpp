@@ -125,11 +125,14 @@ Circle::Circle(float r) {
 void Circle::setR(float r) {
 	radius = r;
 }
-float Circle::getR() {
+float Circle::getR() const {
 	return radius;
 }
 float Circle::Area() const {
 	return (3.14159265359 * (pow(radius, 2)));
+}
+string Circle::GetName2D() const {
+	return "Circle";
 }
 void Circle::Scale(float scaleFactor) {
 	radius *= scaleFactor;
@@ -206,6 +209,11 @@ float Trapezoid::Area() const {
 string Trapezoid::GetName2D() const {
 	return "Trapezoid";
 }
+void Trapezoid::Scale(float scaleFactor) {
+	sideA *= scaleFactor;
+	sideB *= scaleFactor;
+	height *= scaleFactor;
+}
 void Trapezoid::Display() const {
 	ShowArea();
 }
@@ -240,6 +248,9 @@ void Sector::Scale(float scaleFactor) {
 	radius *= scaleFactor;
 	angleRadians *= scaleFactor;
 }
+void Sector::Display() const {
+	ShowArea();
+}
 
 //Shape3d
 void Shape3D::ShowVolume() const {
@@ -255,3 +266,117 @@ bool Shape3D::operator==(const Shape3D& rhs) const {
 	return this->Volume() == rhs.Volume();
 }
 
+/*Triangular Pyramid****************************************************************************/
+TriangularPyramid::TriangularPyramid() {
+	
+	setHp(0);
+	setH(0);
+	setB(0);
+}
+TriangularPyramid::TriangularPyramid(float hP, float h, float b) {
+	setHp(hP);
+	setH(h);
+	setB(b);
+
+}
+
+void TriangularPyramid::setHp(float hP) {
+	heightP = hP;
+}
+float TriangularPyramid::getHp() {
+	return heightP;
+}
+float TriangularPyramid::Volume() const {
+	return (Area() * heightP) / 3;
+}
+string TriangularPyramid::GetName3D() const {
+	return "Triangular Pyramid";
+}
+void TriangularPyramid::Scale(float scaleFactor) {
+	heightP *= scaleFactor;
+	setH(getH() * scaleFactor);
+	setB(getB() * scaleFactor);
+
+}
+void TriangularPyramid::Display() const {
+	ShowVolume();
+}
+
+/*Rectangular Pyramid******************************************************************************/
+RectangularPyramid::RectangularPyramid() {
+	setHeight(0);
+	setL(0);
+	setW(0);
+}
+RectangularPyramid::RectangularPyramid(float h, float l, float w) {
+	setHeight(h);
+	setL(l);
+	setW(w);
+}
+void RectangularPyramid::setHeight(float h) {
+	height = h;
+}
+float RectangularPyramid::getHeight() {
+	return height;
+}
+float RectangularPyramid::Volume() const {
+	return (Area() * height) / 3;
+}
+string RectangularPyramid::GetName3D() const {
+	return "Rectangular Pyramid";
+}
+void RectangularPyramid::Scale(float scaleFactor) {
+	setL(getL() * scaleFactor);
+	setW(getW() * scaleFactor);
+	height *= scaleFactor;
+}
+void RectangularPyramid::Display() const {
+	ShowVolume();
+}
+/*Cylinder********************************************************************************************/
+ Cylinder::Cylinder() {
+	 setR(0);
+	 setHeight(0);
+}
+ Cylinder::Cylinder(float r, float h) {
+	 setR(r);
+	 setHeight(h);
+ }
+ void Cylinder::setHeight(float h) {
+	 height = h;
+ }
+ float Cylinder::getHeight() {
+	 return height;
+ }
+ float Cylinder::Volume() const {
+	 return (Area() * height);
+ }
+ string Cylinder::GetName3D() const {
+	 return "Cylinder";
+ }
+ void Cylinder::Scale(float scaleFactor) {
+	 setR(getR() * scaleFactor);
+	 height *= scaleFactor;
+ }
+ void Cylinder::Display() const {
+	 ShowVolume();
+ }
+ /*Sphere****************************************************************************************/
+ Sphere::Sphere() {
+	 setR(0);
+ }
+ Sphere::Sphere(float r) {
+	 setR(r);
+ }
+ float Sphere::Volume() const {
+	 return (4 * Area() * getR()) / 3;
+ }
+ string Sphere::GetName3D() const {
+	 return "Sphere";
+ }
+ void Sphere::Scale(float scaleFactor) {
+	 setR(getR() * scaleFactor);
+ }
+ void Sphere::Display() const {
+	 ShowVolume();
+ }

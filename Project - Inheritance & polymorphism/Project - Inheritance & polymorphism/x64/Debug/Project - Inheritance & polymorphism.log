@@ -1,2 +1,10 @@
 ﻿  Project - Inheritance & polymorphism.cpp
+  Shapes.cpp
+C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\Project - Inheritance & polymorphism\Shapes.cpp(33,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\Project - Inheritance & polymorphism\Shapes.cpp(106,14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\Project - Inheritance & polymorphism\Shapes.cpp(132,24): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\Project - Inheritance & polymorphism\Shapes.cpp(165,24): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\Project - Inheritance & polymorphism\Shapes.cpp(207,32): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\Project - Inheritance & polymorphism\Shapes.cpp(242,31): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   Project - Inheritance & polymorphism.vcxproj -> C:\CS217\Project3\CS217-OOP\Project - Inheritance & polymorphism\x64\Debug\Project - Inheritance & polymorphism.exe

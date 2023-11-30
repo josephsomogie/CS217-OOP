@@ -72,7 +72,7 @@ public:
 	Circle();
 	Circle(float r);
 	void setR(float r);
-	float getR();
+	float getR() const;
 	float Area() const override;
 	string GetName2D() const override;
 	void Scale(float scaleFactor) override;
@@ -145,6 +145,8 @@ class TriangularPyramid : public Shape3D, private Triangle {
 private:
 	float heightP;
 public:
+	TriangularPyramid();
+	TriangularPyramid(float hP, float h, float b);
 	void setHp(float hP);
 	float getHp();
 	 float Volume() const override;
@@ -155,12 +157,41 @@ public:
 
 };
 class RectangularPyramid : public Shape3D, private Rectangle {
+private:
+	float height;
+public:
+	RectangularPyramid();
+	RectangularPyramid(float h, float l, float w);
+	void setHeight(float h);
+	float getHeight();
+	float Volume() const override;
+	string GetName3D() const override;
+	void Scale(float scaleFactor) override;
+	void Display() const override;
 
 };
 class Cylinder : public Shape3D, private Circle {
+private:
+	float height;
+public:
+	Cylinder();
+	Cylinder(float r, float h);
+	void setHeight(float h);
+	float getHeight();
+	float Volume() const override;
+	string GetName3D() const override;
+	void Scale(float scaleFactor) override;
+	void Display() const override;
 
 };
 class Sphere : public Shape3D, private Circle {
+public:
+	Sphere();
+	Sphere(float r);
+	float Volume() const override;
+	string GetName3D() const override;
+	void Scale(float scaleFactor) override;
+	void Display() const override;
 
 };
 
