@@ -1,17 +1,19 @@
 #pragma once
 #include <string>
 using namespace std;
+
+void ClearStream();
 class Shape {
 public:
 	virtual void Scale(float scaleFactor) = 0;
 	virtual void Display() const = 0;
-	//virtual ~Shape() = 0;
+	virtual ~Shape() = 0;
 };
 //2D shapes classes
 class Shape2D : virtual public Shape {
 public:
 	virtual float Area() const = 0;
-	void ShowArea() const; //done
+	void ShowArea() const; 
 	virtual string GetName2D() const = 0;
 	bool operator>(const Shape2D& rhs) const;
 	bool operator<(const Shape2D& rhs) const;
@@ -26,10 +28,10 @@ public:
 	Square(float s);
 	void setSide(float s);
 	float getSide();
-	float Area() const override;
-	string GetName2D() const override;
-	 void Scale(float scaleFactor) override;
-	 void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	  void Scale(float scaleFactor);
+	 void Display() const;
 
 };
 class Rectangle : public Shape2D {
@@ -42,10 +44,10 @@ public:
 	void setW(float W);
 	float getL();
 	float getW();
-	float Area() const override;
-	string GetName2D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 	
 };
@@ -59,10 +61,10 @@ public:
 	void setH(float h);
 	float getB();
 	float getH();
-	float Area() const override;
-	string GetName2D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 };
 class Circle : public Shape2D {
@@ -73,10 +75,10 @@ public:
 	Circle(float r);
 	void setR(float r);
 	float getR() const;
-	float Area() const override;
-	string GetName2D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 };
 class Ellipse : public Shape2D {
 private:
@@ -88,10 +90,10 @@ public:
 	void setMaj(float maj);
 	float getMin();
 	float getMaj();
-	float Area() const override;
-	string GetName2D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 };
 class Trapezoid : public Shape2D {
@@ -106,10 +108,10 @@ public:
 	float getA();
 	float getB();
 	float getH();
-	float Area() const override;
-	string GetName2D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 
 };
@@ -123,10 +125,10 @@ public:
 	void setA(float a);
 	float getR();
 	float getA();
-	float Area() const override;
-	string GetName2D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Area() const;
+	 string GetName2D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 };
 
 
@@ -149,10 +151,10 @@ public:
 	TriangularPyramid(float hP, float h, float b);
 	void setHp(float hP);
 	float getHp();
-	 float Volume() const override;
-	 string GetName3D() const override;
-	 void Scale(float scaleFactor) override;
-	 void Display() const override;
+	  float Volume() const;
+	  string GetName3D() const;
+	  void Scale(float scaleFactor);
+	  void Display() const;
 	
 
 };
@@ -164,10 +166,10 @@ public:
 	RectangularPyramid(float h, float l, float w);
 	void setHeight(float h);
 	float getHeight();
-	float Volume() const override;
-	string GetName3D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Volume() const;
+	 string GetName3D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 };
 class Cylinder : public Shape3D, private Circle {
@@ -178,20 +180,20 @@ public:
 	Cylinder(float r, float h);
 	void setHeight(float h);
 	float getHeight();
-	float Volume() const override;
-	string GetName3D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Volume() const;
+	 string GetName3D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 };
 class Sphere : public Shape3D, private Circle {
 public:
 	Sphere();
 	Sphere(float r);
-	float Volume() const override;
-	string GetName3D() const override;
-	void Scale(float scaleFactor) override;
-	void Display() const override;
+	 float Volume() const;
+	 string GetName3D() const;
+	 void Scale(float scaleFactor);
+	 void Display() const;
 
 };
 

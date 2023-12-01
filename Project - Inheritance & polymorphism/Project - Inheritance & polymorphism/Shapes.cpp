@@ -4,8 +4,16 @@
 #include <string>
 using namespace std;
 
-//Shape
+void ClearStream()
+{
+	cin.clear();
+	cin.ignore(INT_MAX, '\n');
+}
 
+//Shape
+Shape::~Shape() {
+
+}
 
 
 
