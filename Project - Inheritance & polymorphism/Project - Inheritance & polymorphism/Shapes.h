@@ -34,12 +34,13 @@ public:
 	 void Display() const;
 
 };
-class Rectangle : public Shape2D {
+
+class RectangleX : public Shape2D {
 private:
 	float length, width;
 public:
-	Rectangle();
-	Rectangle(float L, float W);
+	RectangleX();
+	RectangleX(float L, float W);
 	void setL(float L);
 	void setW(float W);
 	float getL();
@@ -80,12 +81,12 @@ public:
 	 void Scale(float scaleFactor);
 	 void Display() const;
 };
-class Ellipse : public Shape2D {
+class EllipseX : public Shape2D {
 private:
 	float semiMinorAxis, semiMajorAxis;
 public:
-	Ellipse();
-	Ellipse(float min, float maj);
+	EllipseX();
+	EllipseX(float min, float maj);
 	void setMin(float min);
 	void setMaj(float maj);
 	float getMin();
@@ -158,7 +159,7 @@ public:
 	
 
 };
-class RectangularPyramid : public Shape3D, private Rectangle {
+class RectangularPyramid : public Shape3D, private RectangleX {
 private:
 	float height;
 public:

@@ -53,40 +53,42 @@ void Square::Scale(float scaleFactor) {
 	side *= scaleFactor;
 }
 void Square::Display() const {
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 /*Rectangle*******************************************************************************************/
-Rectangle::Rectangle() {
+RectangleX::RectangleX() {
 	setL(0);
 	setW(0);
 }
-Rectangle::Rectangle(float L, float W) {
+RectangleX::RectangleX(float L, float W) {
 	setL(L);
 	setW(W);
 }
-void Rectangle::setL(float L) {
+void RectangleX::setL(float L) {
 	length = L;
 }
-void Rectangle::setW(float W) {
+void RectangleX::setW(float W) {
 	width = W;
 }
-float Rectangle::getL() {
+float RectangleX::getL() {
 	return length;
 }
-float Rectangle::getW() {
+float RectangleX::getW() {
 	return width;
 }
-float Rectangle::Area() const {
+float RectangleX::Area() const {
 	return length * width;
 }
-string Rectangle::GetName2D() const {
+string RectangleX::GetName2D() const {
 	return "Rectangle";
 }
-void Rectangle::Scale(float scaleFactor) {
+void RectangleX::Scale(float scaleFactor) {
 	length *= scaleFactor;
 	width *= scaleFactor;
 }
-void Rectangle::Display() const{
+void RectangleX::Display() const{
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 /*Triangle*******************************************************************************************/
@@ -121,6 +123,7 @@ void Triangle::Scale(float scaleFactor) {
 	height *= scaleFactor;
 }
 void Triangle::Display() const {
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 /*Circle********************************************************************************************/
@@ -146,40 +149,42 @@ void Circle::Scale(float scaleFactor) {
 	radius *= scaleFactor;
 }
 void Circle::Display() const {
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 /*Ellipse*******************************************************************************************/
-Ellipse::Ellipse() {
+EllipseX::EllipseX() {
 	setMin(0);
 	setMaj(0);
 }
-Ellipse::Ellipse(float min, float maj) {
+EllipseX::EllipseX(float min, float maj) {
 	setMin(min);
 	setMaj(maj);
 }
-void Ellipse::setMin(float min) {
+void EllipseX::setMin(float min) {
 	semiMinorAxis = min;
 }
-void Ellipse::setMaj(float maj) {
+void EllipseX::setMaj(float maj) {
 	semiMajorAxis = maj;
 }
-float Ellipse::getMin() {
+float EllipseX::getMin() {
 	return semiMinorAxis;
 }
-float Ellipse::getMaj() {
+float EllipseX::getMaj() {
 	return semiMajorAxis;
 }
-float Ellipse::Area() const {
+float EllipseX::Area() const {
 	return (3.14159265359 * (semiMinorAxis * semiMajorAxis));
 }
-string Ellipse::GetName2D() const {
+string EllipseX::GetName2D() const {
 	return "Ellipse";
 }
-void Ellipse::Scale(float scaleFactor)  {
+void EllipseX::Scale(float scaleFactor)  {
 	semiMinorAxis *= scaleFactor;
 	semiMajorAxis *= scaleFactor;
 }
-void Ellipse::Display() const {
+void EllipseX::Display() const {
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 /*Trapezoid****************************************************************************************/
@@ -223,6 +228,7 @@ void Trapezoid::Scale(float scaleFactor) {
 	height *= scaleFactor;
 }
 void Trapezoid::Display() const {
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 /*Sector*******************************************************************************************/
@@ -257,6 +263,7 @@ void Sector::Scale(float scaleFactor) {
 	angleRadians *= scaleFactor;
 }
 void Sector::Display() const {
+	cout << "Shape is a " << GetName2D() << endl;
 	ShowArea();
 }
 
@@ -307,6 +314,7 @@ void TriangularPyramid::Scale(float scaleFactor) {
 
 }
 void TriangularPyramid::Display() const {
+	cout << "Shape is a " << GetName3D() << endl;
 	ShowVolume();
 }
 
@@ -339,6 +347,7 @@ void RectangularPyramid::Scale(float scaleFactor) {
 	height *= scaleFactor;
 }
 void RectangularPyramid::Display() const {
+	cout << "Shape is a " << GetName3D() << endl;
 	ShowVolume();
 }
 /*Cylinder********************************************************************************************/
@@ -367,6 +376,7 @@ void RectangularPyramid::Display() const {
 	 height *= scaleFactor;
  }
  void Cylinder::Display() const {
+	 cout << "Shape is a " << GetName3D() << endl;
 	 ShowVolume();
  }
  /*Sphere****************************************************************************************/
@@ -386,5 +396,6 @@ void RectangularPyramid::Display() const {
 	 setR(getR() * scaleFactor);
  }
  void Sphere::Display() const {
+	 cout << "Shape is a " << GetName3D() << endl;
 	 ShowVolume();
  }
