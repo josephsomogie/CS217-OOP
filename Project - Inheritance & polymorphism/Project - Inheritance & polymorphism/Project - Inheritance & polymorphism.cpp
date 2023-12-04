@@ -684,15 +684,15 @@ int binarySearch2D(float targetArea, const std::vector<T*>& vec) {
 		}
 	}
 
-	// At this point, low is greater than high
+	
 	if (high < 0) {
-		return low;  // targetArea is less than all values
+		return low;  
 	}
 	else if (low >= vec.size()) {
-		return high;  // targetArea is greater than all values
+		return high;  
 	}
 	else {
-		// Choose the index with the closest area
+		
 		return (abs(vec[high]->Area() - targetArea) < abs(vec[low]->Area() - targetArea)) ? high : low;
 	}
 }
