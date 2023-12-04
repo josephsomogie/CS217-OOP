@@ -668,14 +668,15 @@ template<class T>
 int binarySearch2D(float targetArea, const std::vector<T*>& vec) {
 	int low = 0;
 	int high = vec.size() - 1;
-	int closestIndex = -1;
 
 	while (low <= high) {
-		int mid = low + (high - low) / 2;
+		int mid = (low + high) / 2;
 		double midArea = vec[mid]->Area();
 
-		if (midArea >= targetArea) {
-			closestIndex = mid;
+		if (midArea == targetArea) {
+			return mid;
+		}
+		else if (midArea > targetArea) {
 			high = mid - 1;
 		}
 		else {
@@ -683,22 +684,31 @@ int binarySearch2D(float targetArea, const std::vector<T*>& vec) {
 		}
 	}
 
-	return closestIndex;
+	// At this point, low is greater than high
+	if (high < 0) {
+		return low;  // targetArea is less than all values
+	}
+	else if (low >= vec.size()) {
+		return high;  // targetArea is greater than all values
+	}
+	else {
+		// Choose the index with the closest area
+		return (abs(vec[high]->Area() - targetArea) < abs(vec[low]->Area() - targetArea)) ? high : low;
+	}
 }
-
-// Binary search algorithm for vector<Shape3D*>
 template<class T>
 int binarySearch3D(float targetVolume, const std::vector<T*>& vec) {
 	int low = 0;
 	int high = vec.size() - 1;
-	int closestIndex = -1;
 
 	while (low <= high) {
-		int mid = low + (high - low) / 2;
+		int mid = (low + high) / 2;
 		double midVolume = vec[mid]->Volume();
 
-		if (midVolume >= targetVolume) {
-			closestIndex = mid;
+		if (midVolume == targetVolume) {
+			return mid;
+		}
+		else if (midVolume > targetVolume) {
 			high = mid - 1;
 		}
 		else {
@@ -706,8 +716,20 @@ int binarySearch3D(float targetVolume, const std::vector<T*>& vec) {
 		}
 	}
 
-	return closestIndex;
+	
+	if (high < 0) {
+		return low;  
+	}
+	else if (low >= vec.size()) {
+		return high;  
+	}
+	else {
+		
+		return (std::abs(vec[high]->Volume() - targetVolume) < std::abs(vec[low]->Volume() - targetVolume)) ? high : low;
+	}
 }
+
+
 void insertionSort(vector<Shape2D*>& vec) {
 	int n = vec.size();
 
