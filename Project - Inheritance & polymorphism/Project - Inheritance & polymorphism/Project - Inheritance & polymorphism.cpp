@@ -18,6 +18,8 @@ const string RED = "\033[31m";
 const string GREEN = "\033[32m";
 const string YELLOW = "\033[33m";
 const string BLUE = "\033[34m";
+const string SNHU_BLUE = "\033[1;34m";
+const string SNHU_YELLOW = "\033[1;33m";
 const string MAGENTA = "\033[35m";
 const string CYAN = "\033[36m";
 const string WHITE = "\033[37m";
@@ -78,12 +80,11 @@ int main()
 	cout << RED;
 	cout << "						 (Press Enter to Skip)\n";
 	string title = "                                 Joseph Somogie Project: Inheritance & polymorphism";
+	
 	while(!_kbhit())
 	ColorCycle(title, 1, 100);
+
 	ClearStream();
-
-
-	
 	//Menu
 	string msg = "";
 	char command = '0';
@@ -95,15 +96,13 @@ int main()
 		command = '0';
 		optionIndex = 0;
 
-		
-		
 			system("cls");
 
-			cout << RED;
+			cout << SNHU_BLUE;
 			cout << "*********************************************\n";
-			cout << YELLOW;
+			cout << SNHU_YELLOW;
 			cout << "******PRESS NUM KEY FOR DESIRED COMMAND*******\n";
-			cout << BLUE;
+			cout << SNHU_BLUE;
 			//cout << "1: Add Shape" << endl;
 			cout << "1: Test 2D" << endl;
 			cout << "2: Test 3D" << endl;
@@ -116,10 +115,13 @@ int main()
 			cout << "0: Exit Program" << endl;
 			cout << YELLOW;
 			cout << "*********************************************\n";
-			cout << RED;
+			cout << SNHU_BLUE;
+			cout << "*********************************************\n";
+			cout << CYAN;
 			cout << " --> ";
 			cout << COLOR_RESET;
-			cout << GREEN;
+
+			cout << MAGENTA;
 			command = _getch();
 			optionIndex = command - '0';
 			while (optionIndex  > 9 || optionIndex < 0) {
@@ -139,7 +141,7 @@ int main()
 			cout << options[optionIndex] << endl;
 			std::this_thread::sleep_for(std::chrono::milliseconds(400));
 
-			switch (command)
+			switch (command) //Menu Switch statement
 			{
 			case '0': //Exit Program
 				cout << CYAN;
@@ -198,10 +200,10 @@ int main()
 				cout << "Enter area: ";
 				ErrorCheckLoop(select);
 				optionIndex = binarySearch2D(select, test2d);
-				cout << "\n Closest area shape was index #" << optionIndex << endl;
+				cout <<CYAN<< "\n Closest area shape was index #" << optionIndex << endl;
 				test2d[optionIndex]->Display();
 
-				cout << "(Press enter to scale this shape)";
+				cout<<COLOR_RESET << "(Press enter to scale this shape)";
 				_getch();
 				cout << "Enter Scalar: ";
 				ErrorCheckLoop(select);
@@ -259,10 +261,10 @@ int main()
 				cout << "Enter volume: ";
 				ErrorCheckLoop(select);
 				optionIndex = binarySearch3D(select, test3d);
-				cout << "\n Closest volume shape was index #" << optionIndex << endl;
+				cout <<MAGENTA<< "\n Closest volume shape was index #" << optionIndex << endl;
 				test3d[optionIndex]->Display();
 
-				cout << "(Press enter to scale this shape)";
+				cout <<COLOR_RESET<< "(Press enter to scale this shape)";
 				_getch();
 				cout << "Enter Scalar: ";
 				ErrorCheckLoop(select);
@@ -565,7 +567,7 @@ int main()
 				cout << RED << "\nEND OF DEMO" << endl;
 				_getch();
 				break;
-			case '9': //Search Shapes (broken)
+			case '9': //Search Shapes 
 				cout << "PRESS: (1) 2D Shape (2) 3D Shape";
 				select = _getch() - '0';
 
